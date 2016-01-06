@@ -1,7 +1,5 @@
 package midi;
 
-import contributors.Rater;
-
 /**
  * A note represents a note in a musical piece. It has four properties. A song consists of notes. Notes can be locked and unlocked with a key to make them alterable
  * or unalterable.

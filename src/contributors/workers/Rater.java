@@ -1,9 +1,9 @@
-package contributors;
+package contributors.workers;
 
 /**
  * Created by Laurens on 5-1-2016.
  */
-public interface Rater {
+public interface Rater extends Worker {
 
 
     /**

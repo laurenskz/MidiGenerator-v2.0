@@ -1,9 +1,12 @@
 package generation;
 
-import contributors.Rater;
+import contributors.workers.Rater;
+import generationData.ChangeSuggestion;
 import javafx.util.Pair;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -13,7 +16,7 @@ import java.util.List;
 public class Configuration {
 
     /**
-     * A List containing all the Contributors which have implemented the Rater Interface for more information: @see contributors.Rater
+     * A List containing all the Contributors which have implemented the Rater Interface for more information: @see contributors.workers.Rater
      */
     private final List<Rater> raters = new ArrayList<>();
     /**
