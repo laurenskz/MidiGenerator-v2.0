@@ -1,5 +1,7 @@
 package contributors.workers;
 
+import generationData.types.ChangeSuggestion;
+import midi.Note;
 import midi.Song;
 
 import java.util.Collection;
@@ -9,5 +11,5 @@ import java.util.Collection;
  */
 public interface ChangeSuggestor extends Worker {
 
-    Collection<ChangeSuggestor> getChangeSuggestions(Song song);
+    Collection<ChangeSuggestion<Note>> getChangeSuggestions(Song song);
 }

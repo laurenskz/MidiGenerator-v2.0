@@ -1,12 +1,11 @@
 package generation;
 
 import contributors.workers.Rater;
-import generationData.ChangeSuggestion;
 import javafx.util.Pair;
 
-import java.lang.reflect.Array;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -14,6 +13,7 @@ import java.util.List;
  * Created by Laurens on 5-1-2016.
  */
 public class Configuration {
+
 
     /**
      * A List containing all the Contributors which have implemented the Rater Interface for more information: @see contributors.workers.Rater
@@ -27,6 +27,9 @@ public class Configuration {
 
     public Configuration() {
         initializePairs();
+    }
+    public Configuration(int x,int y, int z) {
+        System.out.printf("x = %d y = %d z = %d", x, y, z);
     }
 
     private void initializePairs() {
@@ -44,8 +47,27 @@ public class Configuration {
         return added;
     }
 
-    public static void main(String[] args) {
+    private boolean invoke(Object object, String methodName, Class[] declaredParameters, Object[] parameterValues){
+        try {
+            Method m = Configuration.class.getMethod("sayYes",declaredParameters);
+            m.invoke(object,parameterValues);
+        } catch (NoSuchMethodException|IllegalAccessException|InvocationTargetException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
 
+    public static void main(String[] args) {
+        Object[] yeah = new Object[]{17,"Bab"};
+        Class[] swag = new Class[]{Integer.TYPE,String.class};
+        try {
+            Method m = Configuration.class.getMethod("sayYes",swag);
+            System.out.println(m);
+            m.invoke(new Configuration(),yeah);
+        } catch (NoSuchMethodException|IllegalAccessException|InvocationTargetException e) {
+            e.printStackTrace();
+        }
     }
 
 }
