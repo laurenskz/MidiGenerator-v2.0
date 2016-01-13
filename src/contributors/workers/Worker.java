@@ -1,6 +1,7 @@
 package contributors.workers;
 
-import midi.Song;
+import generationData.data.Data;
+import generationData.data.DataList;
 
 /**
  * A worker is a participant in a song generation.
@@ -9,8 +10,9 @@ import midi.Song;
 public interface Worker {
 
     /**
-     * @param existingSongs The songs which already exist on which the new song will be based.
-     * @return true if this worker still wishes to participate in the generation. False if it wishes to stop.
+     *
+     * @param data The data on which this simulation will be based.
+     * @return
      */
-    boolean initialize(Song[] existingSongs);
+    boolean initialize(DataList<Object> data);
 }

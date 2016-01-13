@@ -1,4 +1,4 @@
-package generationData;
+package generationData.types;
 
 /**
  * Created by Laurens on 6-1-2016.
